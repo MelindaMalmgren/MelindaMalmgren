@@ -45,4 +45,4 @@ jobs:
     steps:
     - name: just echo a message
       run: |
-        echo 'LABEL:' + github.event.label.name
+        echo 'LABEL:' + ${{ github.event.label.name }}
