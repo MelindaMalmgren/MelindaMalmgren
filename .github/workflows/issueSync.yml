@@ -3,11 +3,28 @@ name: Sync issue to Azure DevOps work item
 on:
   issues:
     types:
-      [opened, edited, deleted, closed, reopened, labeled, unlabeled, assigned]
+      [opened, edited, deleted, closed, reopened, labeled]
 
 jobs:
-  alert:
+  updateBug:
     if: github.event.label.name == 'bug'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: danhellem/github-actions-issue-to-work-item@master
+        env:
+          ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"
+          github_token: "${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}"
+          ado_organization: "AmericanAirlines"
+          ado_project: "EngExcellence"
+          ado_area_path: "EngExcellence\\Wiki"
+          ado_wit: "Bug"
+          ado_new_state: "Backlog"
+          ado_active_state: "In-Progress"
+          ado_close_state: "Completed"
+          ado_bypassrules: true
+          
+  updateUserStory:
+    if: github.event.label.name != 'bug'
     runs-on: ubuntu-latest
     steps:
       - uses: danhellem/github-actions-issue-to-work-item@master
@@ -21,4 +38,5 @@ jobs:
           ado_new_state: "Backlog"
           ado_active_state: "In-Progress"
           ado_close_state: "Completed"
-          ado_bypassrules: true
+          ado_bypassrules: true  
+    
