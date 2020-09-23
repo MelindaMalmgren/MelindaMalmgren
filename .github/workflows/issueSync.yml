@@ -38,5 +38,11 @@ jobs:
           ado_new_state: "Backlog"
           ado_active_state: "In-Progress"
           ado_close_state: "Completed"
-          ado_bypassrules: true  
-    
+          ado_bypassrules: true
+ 
+  melinda:
+    runs-on: ubuntu-latest
+    steps:
+    - name: just echo a message
+      run: |
+        echo 'LABEL:' + github.event.label.name
