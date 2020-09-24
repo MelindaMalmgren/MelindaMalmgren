@@ -2,8 +2,6 @@ name: Sync issue to Azure DevOps work item
 
 on:
   issues:
-    label:
-      ['Bug']
     types:
       [opened, edited, deleted, closed, reopened, labeled]
 
@@ -12,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: danhellem/github-actions-issue-to-work-item@master
+        if: github.event.label.name == '*' && github.event.label.name != 'Bug'
         env:
           ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"
           github_token: "${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}"
@@ -23,4 +22,3 @@ jobs:
           ado_active_state: "In-Progress"
           ado_close_state: "Completed"
           ado_bypassrules: true
- 
