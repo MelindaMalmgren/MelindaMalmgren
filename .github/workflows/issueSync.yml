@@ -2,12 +2,13 @@ name: Sync issue to Azure DevOps work item
 
 on:
   issues:
+    label:
+      ['Bug']
     types:
       [opened, edited, deleted, closed, reopened, labeled]
 
 jobs:
   updateBug:
-    if: contains(['Bug'], github.event.label.name)
     runs-on: ubuntu-latest
     steps:
       - uses: danhellem/github-actions-issue-to-work-item@master
