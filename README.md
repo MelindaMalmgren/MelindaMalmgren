@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-Currently an engineer at American Airlines :airplane: where I strive to make our engineering culture the best in the industry.
+Principal engineer of the Engineering Excellence team at :airplane: American Airlines :airplane: where I strive to make our engineering culture the best in the industry.
 
 <!--
 **MelindaMalmgren/MelindaMalmgren** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
