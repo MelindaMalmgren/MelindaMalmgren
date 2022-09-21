@@ -1,7 +1,5 @@
 ### Hi there 👋
 
-I’m a DevOps Technical Lead on American Airlines' _DevOps Tech Enablement_ team looking after 500+ engineering squads, specialising in the implementation of DevOps Transformation strategies. I strive to make our engineering culture the best in the industry.
-
 <!--
 **MelindaMalmgren/MelindaMalmgren** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
